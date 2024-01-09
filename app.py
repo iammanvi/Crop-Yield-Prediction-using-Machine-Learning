@@ -15,12 +15,12 @@ def index():
 @app.route('/predict',methods=['POST'])
 def predict():
     if request.method=='POST':
-        Year = request.form['Year']
-        average_rain_fall_mm_per_year = request.form['average_rain_fall_mm_per_year']
-        pesticides_tonnes = request.form['pesticides_tonnes']
-        avg_temp = request.form['avg_temp']
-        Area = request.form['Area']
-        Item = request.form['Item']
+        Year = request.form['Year'].strip()
+        average_rain_fall_mm_per_year = request.form['average_rain_fall_mm_per_year'].strip()
+        pesticides_tonnes = request.form['pesticides_tonnes'].strip()
+        avg_temp = request.form['avg_temp'].strip()
+        Area = request.form['Area'].strip()
+        Item = request.form['Item'].strip()
 
         features = np.array([[Year, average_rain_fall_mm_per_year, pesticides_tonnes, avg_temp, Area, Item]])
 
